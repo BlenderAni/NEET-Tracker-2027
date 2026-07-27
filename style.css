@@ -451,3 +451,33 @@ body{
     line-height:1.5;
 
 }
+
+
+.delete-btn{
+
+    width:100%;
+
+    padding:12px;
+
+    margin-top:10px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#555;
+
+    color:white;
+
+    font-size:17px;
+
+    cursor:pointer;
+
+}
+
+
+.delete-btn:hover{
+
+    opacity:0.8;
+
+}

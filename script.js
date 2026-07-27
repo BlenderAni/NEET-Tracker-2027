@@ -336,3 +336,44 @@ function openNote(note){
     editingNoteIndex = notes.indexOf(note);
 
 }
+
+
+const deleteNote = document.getElementById("deleteNote");
+
+
+deleteNote.addEventListener("click", function(){
+
+    if(editingNoteIndex === null){
+
+        return;
+
+    }
+
+
+    let confirmDelete = confirm(
+        "Delete this note?"
+    );
+
+
+    if(confirmDelete){
+
+        notes.splice(editingNoteIndex,1);
+
+
+        localStorage.setItem(
+            "notes",
+            JSON.stringify(notes)
+        );
+
+
+        displayNotes();
+
+
+        noteEditor.style.display="none";
+
+
+        editingNoteIndex=null;
+
+    }
+
+});
