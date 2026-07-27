@@ -383,18 +383,3 @@ deleteNote.addEventListener("click", function(){
 });
 
 
-notes.forEach(function(note){
-
-    if(!note.id){
-
-        note.id = Date.now();
-
-    }
-
-});
-
-
-localStorage.setItem(
-    "notes",
-    JSON.stringify(notes)
-);
