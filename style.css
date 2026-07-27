@@ -1,0 +1,453 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    background:#F8F8F8;
+
+    font-family:Arial, Helvetica, sans-serif;
+
+    display:flex;
+
+    flex-direction: column;
+
+    justify-content:center;
+
+    align-items:flex-start;
+
+    height:100vh;
+
+}
+
+.header{
+
+    width:90%;
+
+    margin-top:50px;
+
+}
+
+.top-bar{
+
+    position:relative;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+#title{
+
+    font-size:60px;
+
+    color:#222;
+
+    text-align:center;
+
+    margin-bottom:25px;
+
+}
+
+.days-left{
+
+    display:inline-block;
+
+    padding:15px 40px;
+
+    background:#E63946;
+
+    color:white;
+
+    font-size:45px;
+
+    font-weight:bold;
+
+    border-radius:50px;
+
+}
+
+
+.exam-date{
+
+    position:absolute;
+
+    right:0;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    font-size:18px;
+
+    color:#fcf7f7;
+
+    font-weight:600;
+
+    background:rgb(2, 88, 35);
+
+    padding:10px 18px;
+
+    border-radius:12px;
+
+    border:1px solid #E5E5E5;
+
+    box-shadow:0px 3px 10px rgba(0,0,0,0.08);
+
+}
+
+
+.days-left{
+
+    display:block;
+
+    width:fit-content;
+
+    margin:20px auto;
+
+    padding:15px 40px;
+
+    background:#E63946;
+
+    color:white;
+
+    font-size:28px;
+
+    font-weight:bold;
+
+    border-radius:50px;
+
+}
+
+
+.dashboard{
+
+    width:90%;
+
+    margin:50px auto;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    gap:40px;
+
+}
+
+.notes-card,
+.calendar-card{
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:25px;
+
+    box-shadow:0px 5px 20px rgba(0,0,0,0.08);
+
+}
+
+.notes-card{
+
+    width:30%;
+
+    min-height:500px;
+
+}
+.calendar-card{
+
+    width:65%;
+
+}
+
+.calendar-card h2{
+
+    text-align:center;
+
+    margin-bottom:25px;
+
+}
+
+.days,
+.dates{
+
+    display:grid;
+
+    grid-template-columns:repeat(7,1fr);
+
+    text-align:center;
+
+    gap:10px;
+
+}
+
+.days{
+
+    font-weight:bold;
+
+    color:#666;
+
+    margin-bottom:20px;
+
+}
+
+.dates div{
+
+    padding:15px;
+
+    border-radius:10px;
+
+    transition:.3s;
+
+}
+
+.dates div:hover{
+
+    background:#f0f0f0;
+
+    cursor:pointer;
+
+}
+
+.add-btn{
+
+    width:45px;
+
+    height:45px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#E63946;
+
+    color:white;
+
+    font-size:28px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.add-btn:hover{
+
+    transform:scale(1.08);
+
+}
+
+
+.calendar-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:25px;
+
+}
+
+.month-btn{
+
+    width:45px;
+
+    height:45px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#f3f3f3;
+
+    cursor:pointer;
+
+    font-size:22px;
+
+    transition:.3s;
+
+}
+
+.month-btn:hover{
+
+    background:#E63946;
+
+    color:white;
+
+}
+
+
+
+.completed-day{
+
+    position:relative;
+
+    font-weight:bold;
+
+}
+
+.completed-day::after{
+
+    content:"✖";
+
+    position:absolute;
+
+    top:50%;
+
+    left:50%;
+
+    transform:translate(-50%,-50%);
+
+    color:#E63946;
+
+    font-size:30px;
+
+    pointer-events:none;
+
+}
+
+
+.notes-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:20px;
+
+}
+
+.notes-list{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+
+}
+
+.empty-note{
+
+    margin-top:50px;
+
+    text-align:center;
+
+    color:#999;
+
+    font-size:18px;
+
+}
+
+
+.note-editor{
+
+    display:none;
+
+    margin-top:20px;
+
+}
+
+.note-editor input,
+.note-editor textarea{
+
+    width:100%;
+
+    padding:12px;
+
+    margin-bottom:12px;
+
+    border:1px solid #ddd;
+
+    border-radius:10px;
+
+    font-size:16px;
+
+    font-family:inherit;
+
+}
+
+.note-editor textarea{
+
+    height:180px;
+
+    resize:vertical;
+
+}
+
+.save-btn{
+
+    width:100%;
+
+    padding:12px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#E63946;
+
+    color:white;
+
+    font-size:17px;
+
+    cursor:pointer;
+
+}
+
+.save-btn:hover{
+
+    opacity:.9;
+
+}
+
+
+.note-card{
+
+    background:#FAFAFA;
+
+    border:1px solid #e5e5e5;
+
+    border-radius:12px;
+
+    padding:15px;
+
+    cursor:pointer;
+
+}
+
+
+.note-card h3{
+
+    font-size:14px;
+
+    color:#777;
+
+}
+
+
+.note-card h4{
+
+    margin-top:8px;
+
+}
+
+
+.note-card p{
+
+    margin-top:8px;
+
+    color:#555;
+
+    line-height:1.5;
+
+}
