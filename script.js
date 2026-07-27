@@ -227,13 +227,13 @@ saveNote.addEventListener("click", function(){
 
     id: Date.now(),
 
-    date: noteDate.value,
+    date: noteDate.value || new Date().toISOString().split("T")[0],
 
     title: noteTitle.value,
 
     content: noteContent.value
 
-   };
+    };
 
 
     if(editingNoteIndex !== null){
@@ -325,11 +325,9 @@ displayNotes();
 
 function openNote(note){
 
-    noteEditor.style.display = "block";
+     noteEditor.style.display="block";
 
-    noteDate.value = new Date(note.date)
-    .toISOString()
-    .split("T")[0];
+    noteDate.value = note.date || "";
 
     noteTitle.value = note.title;
 
@@ -337,7 +335,7 @@ function openNote(note){
 
     editingNoteIndex = notes.findIndex(function(item){
 
-    return item.id === note.id;
+        return item.id === note.id;
 
 });
 
@@ -383,3 +381,20 @@ deleteNote.addEventListener("click", function(){
     }
 
 });
+
+
+notes.forEach(function(note){
+
+    if(!note.id){
+
+        note.id = Date.now();
+
+    }
+
+});
+
+
+localStorage.setItem(
+    "notes",
+    JSON.stringify(notes)
+);
