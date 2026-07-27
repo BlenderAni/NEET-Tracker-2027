@@ -223,15 +223,17 @@ const notesList = document.getElementById("notesList");
 
 saveNote.addEventListener("click", function(){
 
-    const note = {
+   const note = {
 
-        date: noteDate.value,
+    id: Date.now(),
 
-        title: noteTitle.value,
+    date: noteDate.value,
 
-        content: noteContent.value
+    title: noteTitle.value,
 
-    };
+    content: noteContent.value
+
+   };
 
 
     if(editingNoteIndex !== null){
@@ -333,7 +335,11 @@ function openNote(note){
 
     noteContent.value = note.content;
 
-    editingNoteIndex = notes.indexOf(note);
+    editingNoteIndex = notes.findIndex(function(item){
+
+    return item.id === note.id;
+
+});
 
 }
 
