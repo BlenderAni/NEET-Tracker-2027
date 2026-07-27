@@ -210,6 +210,15 @@ newNoteBtn.addEventListener("click", function(){
 
 
 let notes = JSON.parse(localStorage.getItem("notes")) || [];
+notes.forEach(function(note){
+
+    if(!note.date){
+
+        note.date = new Date().toISOString().split("T")[0];
+
+    }
+
+});
 let editingNoteIndex = null;
 
 const saveNote = document.getElementById("saveNote");
@@ -327,7 +336,17 @@ function openNote(note){
 
      noteEditor.style.display="block";
 
-    noteDate.value = note.date || "";
+   if(note.date){
+
+    noteDate.value = new Date(note.date).toISOString().split("T")[0];
+
+     }
+
+    else{
+
+    noteDate.value = "";
+
+    }
 
     noteTitle.value = note.title;
 
