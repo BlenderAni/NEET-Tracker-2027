@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Study Time - NEET Tracker</title>
+
+    <link rel="stylesheet" href="time.css" />
+  </head>
+
+  <body>
+    <h1 class="time-heading">STUDY TIME</h1>
+
+    <div class="total-bar">
+      <h2>Total Study Time</h2>
+
+      <h1 id="totalTime">0d 0h 0m</h1>
+    </div>
+
+    <div class="time-container">
+      <!-- TIMER -->
+
+      <div class="timer-box">
+        <h2>Timer</h2>
+
+        <div id="timer">00:00:00</div>
+
+        <button id="startTimer" class="timer-btn">▶ Start Session</button>
+
+        <button id="stopTimer" class="timer-btn" >⏹ Stop Session</button>
+
+        <button id="resetTimer" class="timer-btn">🔄 Reset</button>
+      </div>
+
+      <!-- CALENDAR -->
+
+      <div class="study-calendar">
+        <h2>Study Calendar</h2>
+
+        <div class="calendar-header">
+          <button id="prevStudyMonth">❮</button>
+
+          <h3 id="studyMonth">July 2026</h3>
+
+          <button id="nextStudyMonth">❯</button>
+        </div>
+
+        <div class="study-days">
+          <div>Sun</div>
+          <div>Mon</div>
+          <div>Tue</div>
+          <div>Wed</div>
+          <div>Thu</div>
+          <div>Fri</div>
+          <div>Sat</div>
+        </div>
+
+        <div class="study-dates" id="studyDates"></div>
+      </div>
+    </div>
+
+    <script src="time.js"></script>
+  </body>
+</html>

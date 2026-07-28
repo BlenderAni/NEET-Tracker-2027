@@ -2,7 +2,7 @@ const text = "NEET TRACKER 2027";
 
 const title = document.getElementById("title");
 
-let i = 0;
+let i = 0; //Typing speed 
 
 function typeWriter(){
 
@@ -18,7 +18,7 @@ function typeWriter(){
 
 }
 
-const EXAM_DATE = new Date("May 2, 2027");
+const EXAM_DATE = new Date("May 2, 2027"); //Exam date
 
 const today = new Date();
 
@@ -399,6 +399,20 @@ deleteNote.addEventListener("click", function(){
 
     }
 
+    
+
 });
 
+
+const timeButton = document.getElementById("timeButton");
+
+if(timeButton){
+
+    timeButton.addEventListener("click", function(){
+
+        window.location.href = "time.html";
+
+    });
+
+}
 

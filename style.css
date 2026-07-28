@@ -10,15 +10,7 @@ body{
 
     font-family:Arial, Helvetica, sans-serif;
 
-    display:flex;
-
-    flex-direction: column;
-
-    justify-content:center;
-
-    align-items:flex-start;
-
-    height:100vh;
+    min-height:100vh;
 
 }
 
@@ -127,15 +119,17 @@ body{
 
 .dashboard{
 
-    width:90%;
-
-    margin:50px auto;
-
     display:flex;
 
-    justify-content:space-between;
+    justify-content:center;
 
-    gap:40px;
+    gap:80px;
+
+    width:90%;
+
+    margin:60px auto;
+
+    align-items:flex-start;
 
 }
 
@@ -148,20 +142,34 @@ body{
 
     padding:25px;
 
-    box-shadow:0px 5px 20px rgba(0,0,0,0.08);
+    box-shadow:0 5px 20px rgba(0,0,0,0.08);
 
 }
 
 .notes-card{
 
-    width:30%;
+    width:420px;
 
-    min-height:500px;
+    height:600px;
+
+    padding:25px;
+
+    background:white;
+
+    border-radius:20px;
+
+    display:flex;
+
+    flex-direction:column;
 
 }
+
+
 .calendar-card{
 
-    width:65%;
+    width:800px;
+
+    min-height:420px;
 
 }
 
@@ -334,8 +342,15 @@ body{
 
     gap:15px;
 
-}
+    width:100%;
 
+    flex:1;
+
+    overflow-y:auto;
+
+    min-height:0;
+
+}
 .empty-note{
 
     margin-top:50px;
@@ -353,7 +368,9 @@ body{
 
     display:none;
 
-    margin-top:20px;
+    margin-top:15px;
+
+    flex-shrink:0;
 
 }
 
@@ -423,6 +440,10 @@ body{
 
     cursor:pointer;
 
+    width:100%;
+
+    box-sizing:border-box;
+
 }
 
 
@@ -481,3 +502,264 @@ body{
     opacity:0.8;
 
 }
+
+
+
+.time-heading{
+
+    text-align:center;
+
+    margin-top:20px;
+
+}
+
+
+
+.total-bar{
+
+    width:80%;
+
+    margin:20px auto;
+
+    padding:20px;
+
+    text-align:center;
+
+    border-radius:15px;
+
+    background:#f5f5f5;
+
+}
+
+
+
+.time-container{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:40px;
+
+    margin-top:30px;
+
+}
+
+
+
+.timer-box,
+.study-calendar{
+
+    width:350px;
+
+    min-height:350px;
+
+    padding:20px;
+
+    border-radius:15px;
+
+    background:#fafafa;
+
+    text-align:center;
+
+}
+
+
+
+#timer{
+
+    font-size:45px;
+
+    margin:40px 0;
+
+}
+
+
+
+.timer-box button{
+
+    padding:12px 20px;
+
+    margin:5px;
+
+    cursor:pointer;
+
+}
+
+#timeButton{
+
+    display:block;
+
+    margin:40px auto;
+
+    background:#1976d2;
+
+    color:white;
+
+    padding:15px 60px;
+
+    border:none;
+
+    border-radius:10px;
+
+    font-size:20px;
+
+}
+
+
+#timeButton:hover{
+
+    opacity:0.85;
+
+}
+
+.time-section{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    margin-top:30px;
+}
+
+
+/* Time page alignment */
+
+.time-heading,
+.total-bar,
+.time-container{
+
+    margin-left:auto;
+    margin-right:auto;
+
+}
+
+
+.time-container{
+
+    align-items:center;
+
+}
+
+
+
+.time-heading{
+    text-align:center;
+    margin-top:40px;
+}
+
+
+.total-bar{
+
+    width:80%;
+
+    margin:30px auto;
+
+    padding:25px;
+
+    text-align:center;
+
+    background:white;
+
+    border-radius:20px;
+
+    box-shadow:0 5px 20px rgba(0,0,0,0.08);
+
+}
+
+
+
+.time-container{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:80px;
+
+    margin-top:40px;
+
+}
+
+
+
+.timer-box,
+.study-calendar{
+
+    width:350px;
+
+    min-height:350px;
+
+    padding:25px;
+
+    background:white;
+
+    border-radius:20px;
+
+    text-align:center;
+
+    box-shadow:0 5px 20px rgba(0,0,0,0.08);
+
+}
+
+
+
+#timer{
+
+    font-size:45px;
+
+    margin:50px 0;
+
+}
+
+
+
+.timer-btn{
+
+    width:80%;
+
+    padding:15px;
+
+    margin:8px auto;
+
+    display:block;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#E63946;
+
+    color:white;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    box-shadow:0 5px 10px rgba(0,0,0,0.15);
+
+    transition:0.2s;
+
+}
+
+
+.timer-btn:hover{
+
+    transform:translateY(-3px);
+
+    opacity:0.9;
+
+}
+
+
+.timer-btn:active{
+
+    transform:translateY(2px);
+
+    box-shadow:0 2px 5px rgba(0,0,0,0.15);
+
+}
+
+
+
+

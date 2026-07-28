@@ -1,0 +1,270 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #f8f8f8;
+
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.time-heading {
+  text-align: center;
+
+  margin-top: 40px;
+
+  font-size: 45px;
+}
+
+.total-bar {
+  width: 80%;
+
+  margin: 40px auto;
+
+  padding: 25px;
+
+  background: white;
+
+  border-radius: 20px;
+
+  text-align: center;
+
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.time-container {
+  display: flex;
+
+  justify-content: center;
+
+  align-items: flex-start;
+
+  gap: 40px;
+
+  margin-top: 40px;
+}
+
+/* ===========================
+   TIMER
+=========================== */
+
+.timer-box {
+  width: 320px;
+
+  min-height: 420px;
+
+  background: white;
+
+  border-radius: 20px;
+
+  padding: 25px;
+
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+
+  text-align: center;
+}
+
+#timer {
+  font-size: 52px;
+
+  font-weight: bold;
+
+  margin: 45px 0;
+}
+
+.timer-btn {
+  display: block;
+
+  width: 85%;
+
+  margin: 12px auto;
+
+  padding: 15px;
+
+  border: none;
+
+  border-radius: 12px;
+
+  background: #e63946;
+
+  color: white;
+
+  font-size: 18px;
+
+  font-weight: bold;
+
+  cursor: pointer;
+
+  transition: 0.25s;
+}
+
+.timer-btn:hover {
+  transform: translateY(-3px);
+
+  opacity: 0.9;
+}
+
+.timer-btn:active {
+  transform: scale(0.97);
+}
+
+/* ===========================
+   CALENDAR
+=========================== */
+
+.study-calendar {
+  width: 450px;
+
+  min-height: 420px;
+
+  background: white;
+
+  border-radius: 20px;
+
+  padding: 25px;
+
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.study-calendar h2 {
+  text-align: center;
+
+  font-size: 28px;
+
+  margin-bottom: 25px;
+
+  color: #222;
+}
+
+.calendar-header {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-bottom: 25px;
+}
+
+.calendar-header h3 {
+  font-size: 24px;
+
+  font-weight: 600;
+
+  color: #333;
+}
+
+.month-btn {
+  width: 45px;
+
+  height: 45px;
+
+  border: none;
+
+  border-radius: 12px;
+
+  background: #f3f3f3;
+
+  font-size: 22px;
+
+  cursor: pointer;
+
+  transition: 0.25s;
+}
+
+.month-btn:hover {
+  background: #e63946;
+
+  color: white;
+}
+
+.study-days {
+  display: grid;
+
+  grid-template-columns: repeat(7, 1fr);
+
+  text-align: center;
+
+  margin-bottom: 15px;
+
+  font-weight: bold;
+
+  color: #777;
+}
+.study-dates {
+  display: grid;
+
+  grid-template-columns: repeat(7, 1fr);
+
+  gap: 10px;
+}
+
+.study-dates div {
+  height: 50px;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  border-radius: 12px;
+
+  transition: 0.2s;
+
+  cursor: pointer;
+}
+
+.study-dates div:hover {
+  background: #f3f3f3;
+}
+
+/* ===========================
+   8 HOURS
+=========================== */
+
+.good-study {
+  position: relative;
+}
+
+.good-study .study-mark {
+  position: absolute;
+
+  top: 50%;
+
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  font-size: 42px;
+
+  color: #28a745;
+
+  font-weight: bold;
+
+  pointer-events: none;
+}
+
+/* ===========================
+   10 HOURS
+=========================== */
+
+.great-study {
+  position: relative;
+}
+
+.great-study .study-mark {
+  position: absolute;
+
+  top: 50%;
+
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  font-size: 38px;
+
+  pointer-events: none;
+}
