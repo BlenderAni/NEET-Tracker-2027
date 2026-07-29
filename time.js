@@ -16,6 +16,10 @@ let sessions = JSON.parse(localStorage.getItem("studySessions")) || [];
 
 let totalSeconds = sessions.reduce((sum, session) => sum + session.seconds, 0);
 
+const latestSessionsList = document.getElementById("latestSessionsList");
+
+const viewAllSessions = document.getElementById("viewAllSessions");
+
 function formatTime(time) {
   let hours = Math.floor(time / 3600);
 
@@ -32,18 +36,25 @@ function formatTime(time) {
   );
 }
 
+function formatStudyDuration(totalSeconds) {
+  let hours = Math.floor(totalSeconds / 3600);
+
+  let minutes = Math.floor((totalSeconds % 3600) / 60);
+
+  if (hours === 0) {
+    return minutes + "m";
+  }
+
+  return hours + "h " + minutes + "m";
+}
+
 function updateTimer() {
   timerDisplay.textContent = formatTime(seconds);
 }
 
 function updateTotalTime() {
-  let hours = Math.floor(totalSeconds / 3600);
-
-  let minutes = Math.floor((totalSeconds % 3600) / 60);
-
-  totalTimeDisplay.textContent = hours + "h " + minutes + "m";
+  totalTimeDisplay.textContent = getFormattedTotalStudyTime();
 }
-
 document.getElementById("startTimer").onclick = function () {
   if (running) {
     return;
@@ -74,9 +85,17 @@ document.getElementById("stopTimer").onclick = function () {
       String(today.getDate()).padStart(2, "0");
 
     let session = {
+      id: Date.now(),
+
       date: date,
 
       seconds: seconds,
+
+      duration: formatStudyDuration(seconds),
+
+      subject: "General Study",
+
+      notes: "",
     };
 
     sessions.push(session);
@@ -207,3 +226,61 @@ nextMonth.onclick = function () {
 };
 
 renderCalendar();
+
+function renderLatestSessions() {
+  latestSessionsList.innerHTML = "";
+
+  let studySessions = JSON.parse(localStorage.getItem("studySessions")) || [];
+
+  if (studySessions.length === 0) {
+    latestSessionsList.innerHTML = "<p>No study sessions yet.</p>";
+
+    return;
+  }
+
+  let latestFive = studySessions.slice(-5).reverse();
+
+  latestFive.forEach(function (session) {
+    const card = document.createElement("div");
+
+    card.className = "latest-card";
+
+    card.innerHTML = `
+
+            <div>
+
+                <div class="latest-date">
+
+                    ${session.date}
+
+                </div>
+
+                <div class="latest-subject">
+
+                    ${session.subject || "General Study"}
+
+                </div>
+
+            </div>
+
+            <div class="latest-duration">
+
+                ${session.duration}
+
+            </div>
+
+        `;
+
+    latestSessionsList.appendChild(card);
+  });
+}
+
+renderLatestSessions();
+
+viewAllSessions.addEventListener(
+  "click",
+
+  function () {
+    window.location.href = "sessions.html";
+  },
+);

@@ -1,0 +1,378 @@
+* {
+  margin: 0;
+
+  padding: 0;
+
+  box-sizing: border-box;
+}
+
+body {
+  background: #f8f8f8;
+
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.sessions-heading {
+  text-align: center;
+
+  margin-top: 40px;
+
+  font-size: 45px;
+}
+
+.back-btn {
+  display: block;
+
+  margin: 30px auto;
+
+  background: #1976d2;
+
+  color: white;
+
+  border: none;
+
+  border-radius: 12px;
+
+  padding: 14px 30px;
+
+  cursor: pointer;
+
+  font-size: 18px;
+}
+
+.summary-card {
+  width: 85%;
+
+  margin: 30px auto;
+
+  display: flex;
+
+  justify-content: space-evenly;
+
+  gap: 25px;
+}
+
+.summary-box {
+  flex: 1;
+
+  background: white;
+
+  padding: 25px;
+
+  border-radius: 18px;
+
+  text-align: center;
+
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.search-section {
+  width: 85%;
+
+  margin: 30px auto;
+}
+
+#searchSession {
+  width: 100%;
+
+  padding: 18px;
+
+  border-radius: 12px;
+
+  border: 1px solid #ddd;
+
+  font-size: 18px;
+}
+
+#sessionsContainer {
+  width: 85%;
+
+  margin: 35px auto;
+}
+
+.empty-session{
+
+    background:white;
+
+    padding:40px;
+
+    text-align:center;
+
+    border-radius:15px;
+
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+
+}
+
+
+.session-card{
+
+    background:white;
+
+    border-radius:18px;
+
+    padding:25px;
+
+    margin-bottom:25px;
+
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+
+}
+
+
+.session-date{
+
+    font-size:22px;
+
+    font-weight:bold;
+
+}
+
+
+.session-subject{
+
+    margin-top:18px;
+
+    font-size:20px;
+
+    color:#1976d2;
+
+}
+
+
+.session-duration{
+
+    margin-top:15px;
+
+    font-size:18px;
+
+}
+
+
+.session-notes{
+
+    margin-top:20px;
+
+    color:#666;
+
+    white-space:pre-wrap;
+
+}
+
+
+.session-buttons{
+
+    margin-top:25px;
+
+    display:flex;
+
+    gap:15px;
+
+}
+
+
+.edit-session{
+
+    background:#1976d2;
+
+    color:white;
+
+    border:none;
+
+    border-radius:10px;
+
+    padding:10px 22px;
+
+    cursor:pointer;
+
+}
+
+
+.delete-session{
+
+    background:#e63946;
+
+    color:white;
+
+    border:none;
+
+    border-radius:10px;
+
+    padding:10px 22px;
+
+    cursor:pointer;
+
+}
+
+
+
+
+
+.card-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:18px;
+
+}
+
+.session-duration{
+
+    background:#1976d2;
+
+    color:white;
+
+    padding:8px 16px;
+
+    border-radius:20px;
+
+    font-weight:bold;
+
+}
+
+.session-subject{
+
+    font-size:24px;
+
+    font-weight:bold;
+
+    color:#222;
+
+    margin-bottom:12px;
+
+}
+
+.session-notes{
+
+    color:#666;
+
+    line-height:1.6;
+
+    margin-bottom:20px;
+
+    min-height:45px;
+
+}
+
+.session-buttons{
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    gap:12px;
+
+}
+
+
+
+.edit-modal{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.45);
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+.edit-box{
+
+    width:420px;
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:20px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.2);
+
+}
+
+.edit-box label{
+
+    display:block;
+
+    margin-top:18px;
+
+    margin-bottom:8px;
+
+    font-weight:bold;
+
+}
+
+.edit-box input,
+.edit-box textarea{
+
+    width:100%;
+
+    padding:12px;
+
+    border-radius:10px;
+
+    border:1px solid #ccc;
+
+}
+
+.edit-box textarea{
+
+    height:120px;
+
+    resize:vertical;
+
+}
+
+.edit-buttons{
+
+    margin-top:25px;
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    gap:12px;
+
+}
+
+#saveEdit{
+
+    background:#1976d2;
+
+    color:white;
+
+    border:none;
+
+    padding:12px 24px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+}
+
+#cancelEdit{
+
+    background:#777;
+
+    color:white;
+
+    border:none;
+
+    padding:12px 24px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+}

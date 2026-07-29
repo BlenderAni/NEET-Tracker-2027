@@ -268,3 +268,92 @@ body {
 
   pointer-events: none;
 }
+
+
+/* ===========================
+   LATEST SESSIONS
+=========================== */
+
+.latest-sessions{
+
+    width:80%;
+
+    margin:40px auto;
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:25px;
+
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+
+}
+
+.latest-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:20px;
+
+}
+
+#viewAllSessions{
+
+    background:#1976d2;
+
+    color:white;
+
+    border:none;
+
+    border-radius:10px;
+
+    padding:12px 22px;
+
+    cursor:pointer;
+
+}
+
+.latest-card{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:18px;
+
+    border-bottom:1px solid #eee;
+
+}
+
+.latest-card:last-child{
+
+    border-bottom:none;
+
+}
+
+.latest-date{
+
+    font-weight:bold;
+
+}
+
+.latest-subject{
+
+    color:#1976d2;
+
+    margin-top:5px;
+
+}
+
+.latest-duration{
+
+    font-weight:bold;
+
+}

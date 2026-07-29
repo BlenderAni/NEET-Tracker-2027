@@ -1,0 +1,69 @@
+<!doctype html>
+
+<html>
+  <head>
+    <title>Study Sessions</title>
+
+    <link rel="stylesheet" href="sessions.css" />
+  </head>
+
+  <body>
+    <h1 class="sessions-heading">📚 STUDY SESSIONS</h1>
+
+    <button id="backButton" class="back-btn">← Back To Study Timer</button>
+
+    <div class="summary-card">
+      <div class="summary-box">
+        <h3>Total Sessions</h3>
+
+        <h2 id="totalSessions">0</h2>
+      </div>
+
+      <div class="summary-box">
+        <h3>Total Study Time</h3>
+
+        <h2 id="summaryStudyTime">0d 0h 0m</h2>
+      </div>
+    </div>
+
+    <div class="search-section">
+      <input
+        type="text"
+        id="searchSession"
+        placeholder="Search subject or notes..."
+      />
+    </div>
+
+    <div id="sessionsContainer"></div>
+
+    <div id="editModal" class="edit-modal">
+      <div class="edit-box">
+        <h2>Edit Session</h2>
+
+        <label>Date</label>
+
+        <input type="date" id="editDate" />
+
+        <label>Subject</label>
+
+        <input type="text" id="editSubject" />
+
+        <label>Duration (minutes)</label>
+
+        <input type="number" id="editMinutes" />
+
+        <label>Notes</label>
+
+        <textarea id="editNotes"></textarea>
+
+        <div class="edit-buttons">
+          <button id="saveEdit">Save</button>
+
+          <button id="cancelEdit">Cancel</button>
+        </div>
+      </div>
+    </div>
+    <script src="studyData.js"></script>
+    <script src="sessions.js"></script>
+  </body>
+</html>
