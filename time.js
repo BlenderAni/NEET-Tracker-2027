@@ -4,6 +4,8 @@
 
 let seconds = 0;
 
+let startTime = null;
+
 let timerInterval = null;
 
 let running = false;
@@ -20,9 +22,7 @@ const latestSessionsList = document.getElementById("latestSessionsList");
 
 const viewAllSessions = document.getElementById("viewAllSessions");
 
-const homeButton =
-
-document.getElementById("homeButton");
+const homeButton = document.getElementById("homeButton");
 
 function formatTime(time) {
   let hours = Math.floor(time / 3600);
@@ -59,21 +59,31 @@ function updateTimer() {
 function updateTotalTime() {
   totalTimeDisplay.textContent = getFormattedTotalStudyTime();
 }
+
 document.getElementById("startTimer").onclick = function () {
   if (running) {
     return;
   }
 
+  startTime = Date.now() - seconds * 1000;
+
   running = true;
 
   timerInterval = setInterval(function () {
-    seconds++;
+    seconds = Math.floor((Date.now() - startTime) / 1000);
 
     updateTimer();
   }, 1000);
 };
 
 document.getElementById("stopTimer").onclick = function () {
+  if (!running) {
+    return;
+  }
+
+  // Calculate actual elapsed time
+  seconds = Math.floor((Date.now() - startTime) / 1000);
+
   clearInterval(timerInterval);
 
   running = false;
@@ -117,9 +127,13 @@ document.getElementById("stopTimer").onclick = function () {
 
   seconds = 0;
 
+  startTime = null;
+
   updateTimer();
 
   renderCalendar();
+
+  renderLatestSessions();
 };
 
 document.getElementById("resetTimer").onclick = function () {
@@ -128,6 +142,8 @@ document.getElementById("resetTimer").onclick = function () {
   running = false;
 
   seconds = 0;
+
+  startTime = null;
 
   updateTimer();
 };
@@ -289,16 +305,12 @@ viewAllSessions.addEventListener(
   },
 );
 
-
-
 homeButton.addEventListener(
+  "click",
 
-    "click",
-
-    function(){
-
-        window.location.href = "index.html";
-
-    }
-
+  function () {
+    window.location.href = "index.html";
+  },
 );
+
+renderCalendar();
