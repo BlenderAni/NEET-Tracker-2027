@@ -2,6 +2,14 @@ const text = "NEET TRACKER 2027";
 
 const title = document.getElementById("title");
 
+const daysStat = document.getElementById("daysStat");
+
+const studyHoursStat = document.getElementById("studyHoursStat");
+
+const streakStat = document.getElementById("streakStat");
+
+const sessionsStat = document.getElementById("sessionsStat");
+
 let i = 0; //Typing speed 
 
 function typeWriter(){
@@ -415,4 +423,44 @@ if(timeButton){
     });
 
 }
+
+function updateDashboardStats(){
+
+    const sessions = getSessions();
+
+    // Total sessions
+
+    sessionsStat.textContent = sessions.length;
+
+    // Total study hours
+
+    const totalSeconds = getTotalSeconds();
+
+    const totalHours = Math.floor(totalSeconds / 3600);
+
+    studyHoursStat.textContent = totalHours + "h";
+
+    // Days left
+
+    const examDate = new Date("2027-05-02");
+
+    const today = new Date();
+
+    const difference = examDate - today;
+
+    const daysLeft = Math.ceil(
+
+        difference / (1000 * 60 * 60 * 24)
+
+    );
+
+    daysStat.textContent = daysLeft;
+
+    // Current streak
+
+    streakStat.textContent = getCurrentStreak() + " Days";
+
+}
+
+updateDashboardStats();
 

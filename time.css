@@ -310,7 +310,7 @@ body {
 
     border:none;
 
-    border-radius:10px;
+    border-radius:100px;
 
     padding:12px 22px;
 
@@ -355,5 +355,45 @@ body {
 .latest-duration{
 
     font-weight:bold;
+
+}
+
+
+
+.bottom-home{
+
+    margin:50px 0;
+
+    text-align:center;
+
+}
+
+#homeButton{
+
+    padding:16px 40px;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:#444;
+
+    color:white;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+#homeButton:hover{
+
+    background:#222;
+
+    transform:translateY(-2px);
 
 }

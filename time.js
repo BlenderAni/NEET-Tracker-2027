@@ -20,6 +20,10 @@ const latestSessionsList = document.getElementById("latestSessionsList");
 
 const viewAllSessions = document.getElementById("viewAllSessions");
 
+const homeButton =
+
+document.getElementById("homeButton");
+
 function formatTime(time) {
   let hours = Math.floor(time / 3600);
 
@@ -283,4 +287,18 @@ viewAllSessions.addEventListener(
   function () {
     window.location.href = "sessions.html";
   },
+);
+
+
+
+homeButton.addEventListener(
+
+    "click",
+
+    function(){
+
+        window.location.href = "index.html";
+
+    }
+
 );

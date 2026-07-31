@@ -1,12 +1,14 @@
 <!doctype html>
 <html>
   <head>
-    <title></title>
+    <title>NEET Tracker</title>
 
     <link rel="stylesheet" href="style.css" />
   </head>
 
   <body>
+    <!-- ================= HEADER ================= -->
+
     <div class="header">
       <div class="top-bar">
         <h1 id="title"></h1>
@@ -17,7 +19,47 @@
       <div id="daysLeft" class="days-left">278 DAYS LEFT</div>
     </div>
 
+    <!-- ================= QUICK STATS ================= -->
+
+    <div class="stats-container">
+      <div class="stat-card">
+        <div class="stat-icon">📅</div>
+
+        <div class="stat-title">Days Left</div>
+
+        <div class="stat-value" id="daysStat">278</div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-icon">⏱</div>
+
+        <div class="stat-title">Study Time</div>
+
+        <div class="stat-value" id="studyHoursStat">0h</div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-icon">🔥</div>
+
+        <div class="stat-title">Streak</div>
+
+        <div class="stat-value" id="streakStat">0</div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-icon">📚</div>
+
+        <div class="stat-title">Sessions</div>
+
+        <div class="stat-value" id="sessionsStat">0</div>
+      </div>
+    </div>
+
+    <!-- ================= DASHBOARD ================= -->
+
     <div class="dashboard">
+      <!-- JOURNAL -->
+
       <div class="notes-card">
         <div class="notes-header">
           <h2>📖 Study Journal</h2>
@@ -38,14 +80,15 @@
             id="noteContent"
             maxlength="120000"
             placeholder="Write what you studied today..."
-          >
-          </textarea>
+          ></textarea>
 
           <button id="saveNote" class="save-btn">Save Note</button>
 
           <button id="deleteNote" class="delete-btn">Delete Note</button>
         </div>
       </div>
+
+      <!-- CALENDAR -->
 
       <div class="calendar-card">
         <div class="calendar-header">
@@ -70,10 +113,19 @@
       </div>
     </div>
 
-    <div class="time-section">
-      <button id="timeButton">TIME</button>
-    </div>
+    <!-- ================= STUDY TIME BUTTON ================= -->
 
+    <div class="time-section">
+      <button id="timeButton">
+        <span class="time-icon"> ⏱ </span>
+
+        <span class="time-title"> Study Time </span>
+
+        <span class="time-subtitle"> Continue today's study session </span>
+      </button>
+    </div>
+    
+    <script src="studydata.js"></script>
     <script src="script.js"></script>
   </body>
 </html>

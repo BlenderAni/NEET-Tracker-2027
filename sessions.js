@@ -14,11 +14,27 @@ const editNotes = document.getElementById("editNotes");
 
 const saveEdit = document.getElementById("saveEdit");
 
+const targetsButton =
+
+document.getElementById("targetsButton");
+
 let editingSessionId = null;
 
 backButton.addEventListener("click", function () {
   window.location.href = "time.html";
 });
+
+targetsButton.addEventListener(
+
+    "click",
+
+    function(){
+
+        window.location.href="targets.html";
+
+    }
+
+);
 
 const sessionsContainer = document.getElementById("sessionsContainer");
 

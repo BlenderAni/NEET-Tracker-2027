@@ -1,0 +1,81 @@
+<!doctype html>
+
+<html>
+  <head>
+    <title>Targets</title>
+
+    <link rel="stylesheet" href="targets.css" />
+  </head>
+
+  <body>
+    <h1 class="heading">TARGETS</h1>
+
+    <div class="status-card">
+      <h2 id="statusTitle">Loading...</h2>
+
+      <p id="statusMessage">Calculating...</p>
+    </div>
+
+    <div class="target-container">
+      <div class="target-card">
+        <h2>Weekly Progress</h2>
+
+        <h1 id="weeklyHours">0h / 56h</h1>
+
+        <div class="progress-bar">
+          <div id="weeklyProgress" class="progress-fill"></div>
+        </div>
+
+        <p id="weeklyPercentage">0%</p>
+
+        <p id="weeklyPrediction">-</p>
+      </div>
+
+      <div class="target-card">
+        <h2>Monthly Progress</h2>
+
+        <h1 id="monthlyHours">0h / 240h</h1>
+
+        <div class="progress-bar">
+          <div id="monthlyProgress" class="progress-fill"></div>
+        </div>
+
+        <p id="monthlyPercentage">0%</p>
+
+        <p id="monthlyPrediction">-</p>
+      </div>
+
+      <div class="target-card">
+        <h2>Current Pace</h2>
+
+        <div class="pace-section">
+          <h3>Weekly Average</h3>
+
+          <p id="weeklyAverage">0 h/day</p>
+
+          <h3>Projected Weekly Total</h3>
+
+          <p id="weeklyProjection">0 h</p>
+        </div>
+
+        <hr />
+
+        <div class="pace-section">
+          <h3>Monthly Average</h3>
+
+          <p id="monthlyAverage">0 h/day</p>
+
+          <h3>Projected Monthly Total</h3>
+
+          <p id="monthlyProjection">0 h</p>
+        </div>
+      </div>
+    </div>
+
+    <button id="backButton">← Back</button>
+
+    <script src="studydata.js"></script>
+
+    <script src="targets.js"></script>
+  </body>
+</html>

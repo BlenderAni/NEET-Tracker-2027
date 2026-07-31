@@ -376,3 +376,56 @@ body {
     cursor:pointer;
 
 }
+
+
+.top-buttons{
+
+    width:900px;
+
+    margin:40px auto;
+
+    display:flex;
+
+    justify-content:space-between;
+
+}
+
+#backButton,
+#targetsButton{
+
+    padding:15px 35px;
+
+    border:none;
+
+    border-radius:12px;
+
+    font-size:18px;
+
+    color:white;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+#backButton{
+
+    background:#555;
+
+}
+
+#targetsButton{
+
+    background:#1976d2;
+
+}
+
+#backButton:hover,
+#targetsButton:hover{
+
+    transform:translateY(-2px);
+
+    opacity:.9;
+
+}
